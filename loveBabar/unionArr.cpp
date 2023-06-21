@@ -1,6 +1,9 @@
 // Find Union and Intersection of two unsorted arrays
-#include <bits/stdc++.h>
+#include <iostream>
+#include <set>
+
 using namespace std;
+
 
 void printArr(int n, int arrayToPrint[]){
     for (int i = 0; i < n; i++)
@@ -20,13 +23,26 @@ int main()
         cin >> arr1[i];
     }
     cout << "Size of array 2: ";
-    cin >> n;
-    int arr2[n];
-    for (i = 0; i < n; i++)
+    int n2;
+    cin >> n2;
+    int arr2[n2];
+    for (i = 0; i < n2; i++)
     {
         cin >> arr2[i];
     }
-    
+    set<int> s;
+    for (i = 0; i < n; i++)
+    {
+        s.insert(arr1[i]);
+    }
+    for (i = 0; i < n2; i++)
+    {
+        s.insert(arr2[i]);
+    }
+    for (auto& num : s) {
+        std::cout << num << ' ';
+    }
+
 
     return 0;
 }
